@@ -1,0 +1,257 @@
+
+body {
+    width: 400px;
+    max-height: 600px;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    background-color: #f9f9fa;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.container {
+    margin: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    width: auto;
+    margin: 0;
+}
+
+.settings-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #0060df;
+}
+
+.back-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.field-group {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #333;
+    font-size: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+    max-height: 100px;
+}
+
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #0060df;
+    box-shadow: 0 0 0 2px rgba(0, 96, 223, 0.2);
+}
+
+.field-hint {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0060df;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0050c7;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.result {
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.result.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.result.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.result.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.loading {
+    text-align: center;
+    padding: 12px;
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Compact layout adjustments */
+.field-group:last-of-type {
+    margin-bottom: 8px;
+}
+
+/* Make form more compact */
+#apiForm .field-group {
+    margin-bottom: 10px;
+}
+
+#settingsForm .field-group {
+    margin-bottom: 12px;
+}
+
+.inline-fields {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.inline-field {
+    flex: 1;
+}
+
+.inline-field label {
+    margin-bottom: 4px;
+}
+
+.inline-field select {
+    width: 100%;
+}
+
+.inline-field .field-hint {
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+/* Company and Contact inline layout */
+.company-contact-fields {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.company-contact-fields .inline-field {
+    flex: 1;
+}
+
+.result a {
+    color: #0060df;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.result a:hover {
+    text-decoration: underline;
+}
+
+.result a:visited {
+    color: #8000d7;
+}

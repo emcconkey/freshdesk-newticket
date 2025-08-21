@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Freshdesk Ticket Creator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h3>New Freshdesk Ticket</h3>
+      <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+    </div>
+
+    <!-- Main form view -->
+    <div id="mainView">
+      <form id="apiForm">
+        <div class="field-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required placeholder="Brief description of the issue">
+        </div>
+
+        <div class="field-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required placeholder="Detailed description of the issue..." rows="3"></textarea>
+          <small class="field-hint">This will be the main description of the ticket</small>
+        </div>
+
+        <div class="field-group">
+          <label for="workNote">Work Note:</label>
+          <textarea id="workNote" name="workNote" placeholder="Describe the work done on this ticket..." rows="4"></textarea>
+          <small class="field-hint">This will be added as a note to the ticket after creation</small>
+        </div>
+
+        <div class="field-group inline-fields">
+          <div class="inline-field">
+            <label>
+              <input type="checkbox" id="privateNote" name="privateNote">
+              Make work note private
+            </label>
+            <small class="field-hint">Private notes are only visible to agents</small>
+          </div>
+
+          <div class="inline-field">
+            <label for="emailNotification">Send Email Notification:</label>
+            <select id="emailNotification" name="emailNotification" required>
+              <option value="true" selected>Yes</option>
+              <option value="false">No</option>
+            </select>
+            <small class="field-hint">Whether to send email notification</small>
+          </div>
+        </div>
+
+        <div class="field-group company-contact-fields">
+          <div class="inline-field">
+            <label for="company">Company:</label>
+            <select id="company" name="company" required>
+              <option value="">Select Company</option>
+            </select>
+          </div>
+
+          <div class="inline-field">
+            <label for="contact">Contact:</label>
+            <select id="contact" name="contact" required disabled>
+              <option value="">Select Company First</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="timeSpent">Time Spent (hours):</label>
+          <input type="number" id="timeSpent" name="timeSpent" placeholder="0.0" step="0.25" min="0">
+          <small class="field-hint">1.5 for 1 hour 30 minutes. Leave empty to skip time entry.</small>
+        </div>
+
+        <button type="submit" id="submitBtn">Create Ticket</button>
+      </form>
+
+      <div id="result" class="result hidden"></div>
+      <div id="loading" class="loading hidden">Creating ticket...</div>
+    </div>
+
+    <!-- Settings view -->
+    <div id="settingsView" class="hidden">
+      <div class="settings-header">
+        <button id="backBtn" class="back-btn">← Back</button>
+        <h4>Freshdesk Settings</h4>
+      </div>
+
+      <form id="settingsForm">
+        <div class="field-group">
+          <label for="apiKey">Freshdesk API Key:</label>
+          <input type="password" id="apiKey" name="apiKey" placeholder="Enter your Freshdesk API key">
+          <small class="field-hint">Found in Your Profile → Show API Key</small>
+        </div>
+
+        <div class="field-group">
+          <label for="domain">Freshdesk Domain:</label>
+          <input type="text" id="domain" name="domain" placeholder="yourcompany" title="Domain name only (without .freshdesk.com)">
+          <small class="field-hint">Just the domain name (e.g., "yourcompany" for yourcompany.freshdesk.com)</small>
+        </div>
+
+        <div class="field-group">
+          <label for="agentId">Agent ID:</label>
+          <input type="text" id="agentId" name="agentId" placeholder="Enter your agent ID">
+          <small class="field-hint">Your Freshdesk agent ID (found in your profile URL)</small>
+        </div>
+
+        <button type="submit" id="saveSettingsBtn">Save Settings</button>
+      </form>
+
+      <div id="settingsResult" class="result hidden"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
