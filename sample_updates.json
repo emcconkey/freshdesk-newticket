@@ -1,0 +1,18 @@
+{
+  "addons": {
+    "freshdesk-ticket-creator@3wolf.io": {
+      "updates": [
+        {
+          "version": "1.0.0",
+          "update_link": "https://3wolf.io/static/freshdesk-ticket-extension/freshdesk-ticket-creator-1.0.0.xpi",
+          "update_hash": "sha256:YOUR_HASH_HERE",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "120.0"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
